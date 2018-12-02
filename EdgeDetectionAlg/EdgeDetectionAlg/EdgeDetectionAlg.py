@@ -3,7 +3,7 @@ import numpy as np
 import os
 from matplotlib import pyplot as plt
 
-imgSrc = 'images\\books.jpg'
+imgSrc = 'images\\flowers.jpg'
 gray_img = cv.imread(imgSrc,cv.IMREAD_GRAYSCALE)
 h,w = gray_img.shape    # dim imaginii h - height, w - width
 
@@ -163,5 +163,5 @@ ret8,th8 = cv.threshold(laplacianImage,0,255,cv.THRESH_BINARY+cv.THRESH_OTSU)
 plt.imsave('res\TprewittResOcv.png', th8, cmap='gray', format='png')
 
 # CANNY
-cannyImage = cv.Canny(blur,0,255,L2gradient=False)
+cannyImage = cv.Canny(gray_img,50,150,L2gradient=True)
 plt.imsave('res\TcannyResOcv.png', cannyImage, cmap='gray', format='png')
