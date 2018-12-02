@@ -3,11 +3,11 @@ import numpy as np
 import os
 from matplotlib import pyplot as plt
 
-imgSrc = 'images\\portrait.jpg'
+imgSrc = 'images\\books.jpg'
 gray_img = cv.imread(imgSrc,cv.IMREAD_GRAYSCALE)
 h,w = gray_img.shape    # dim imaginii h - height, w - width
 
-blur = cv.bilateralFilter(gray_img,5,10,10)
+blur = cv.bilateralFilter(gray_img,3,50,50)
 
 # MATH
 # SOBEL
